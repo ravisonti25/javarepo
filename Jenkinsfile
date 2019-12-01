@@ -27,6 +27,7 @@ pipeline {
 			}
 			steps {
 				sh 'cp target/my-app-1.0-SNAPSHOT.jar /home/satish'
+				sh 'echo "deployment completed successfully"'
 			}
 		}
 	}
