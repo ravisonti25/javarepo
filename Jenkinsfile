@@ -29,7 +29,8 @@ pipeline {
 		}
 		stage('deploy') {
 			steps {
-				sh 'cp target/my-app-1.0-SNAPSHOT.jar /home/satish/webapp'
+				sh 'mkdir -p /usr/share/tomcat/webapp/ROOT'
+				sh 'cp target/my-app-1.0-SNAPSHOT.jar /usr/share/tomcat/webapp/ROOT'
 				sh 'echo "deployment completed successfully"'
 			}
 		}
