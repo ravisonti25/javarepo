@@ -29,7 +29,7 @@ pipeline {
 		}
 		stage('deploy') {
 			steps {
-				sh 'cp target/my-app-1.0-SNAPSHOT.jar /home/satish'
+				sh 'cp target/my-app-1.0-SNAPSHOT.jar /home/satish/webapp'
 				sh 'echo "deployment completed successfully"'
 			}
 		}
