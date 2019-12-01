@@ -10,12 +10,18 @@ pipeline {
 	triggers {
 		pollSCM('* * * * *')
 	}
-	input {
-		message "should we continue?"
-		ok "Yes, we should"
-		submitter "satish"
-	}
+	
 	stages {
+		stage('decision') {
+			        input {
+			                message "should we continue?"
+			                ok "Yes, we should"
+			                submitter "satish"
+        			}
+				steps {
+					sh 'echo "proceeding further"'
+				}
+		}
 		stage('build') {
 			steps {
 				sh 'mvn clean package'
